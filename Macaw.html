@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somalia Wildlife Tracker</title>
+    <link rel="icon" href="../IMAGE/L2.webp">
+    <!-- Include Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!--- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!---custom css -->
+    <!-- <link rel="stylesheet" href="../CSS/Style.css"> -->
+    <link rel="stylesheet" href="S.css">
+
+
+
+</head>
+
+<body>
+
+
+    <header class="header">
+        <a href="Index.html" class="logo">
+            <i class="bx bxs-basket"></i>&nbsp;Somalia Wildlife Tracker
+        </a>
+
+        <i class="bx bx-menu" id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="Index.html" class="active">Home</a>
+            <a href="Macaw.html">Macaw</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">
+                    Products <i class="bx bx-chevron-down"></i>
+                </a>
+                <ul class="submenu">
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="./Macow/Xogta.html">Xogta Xola</a></li>
+                    <li><a href="./All Index/Chapters.html">Chapters</a></li>
+                    <li><a href="./All Index/Lab.html">Lap</a></li>
+                    <li><a href="./All Index/Assingment.html">Assignment</a></li>
+                    <li><a href="./All Index/Help.html">Help Page</a></li>
+                </ul>
+            </div>
+            <a href="Animals.html">Animals</a>
+            <a href="Content.html">Contact</a>
+            <a href="Prodect.html">Prodect</a>
+            <a href="Map.html">Map</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="bx bx-moon toggle-theme" id="theme-icon"></i>
+        </nav>
+    </header><br><br><br><br><br>
+
+
+
+    <!--- Macaw section desing --->
+   <center> <section class="about" id="about">
+        <div class="about-img">
+        </div>
+        <div class="about-content">
+            &nbsp;<h2 class="heading">Xogta<span>Xolaha.</span></h2>
+            <div class="region-container">
+                <!-- Bakayle -->
+                <div class="region">
+                    <h2>Bakayle</h2>
+                    <p>Bakaylaha waxaa laga helaa guud ahaan Soomaaliya, waxayna ka mid yihiin xayawaanka ugu
+                        caansan ee dalka.</p>
+                    <div class="animal-image-container">
+                        <img src="bakeyle.jpg" class="animal-image" alt="Bakayle" id="bakayle-image">
+                        <button class="btn" onclick="toggleImage('bakayle-image', 'bakayle-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Waraabe -->
+                <div class="region">
+                    <h2>Waraabe</h2>
+                    <p>Waraabaha waa xayawaan cagaaran oo xoolaha ku ilaalinaya dhammaan Soomaaliya.</p>
+                    <div class="animal-image-container">
+                        <img src="Hyena wrabe.jpeg" class="animal-image" alt="Waraabe" id="waraabe-image">
+                        <button class="btn" onclick="toggleImage('waraabe-image', 'waraabe-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Geel -->
+                <div class="region">
+                    <h2>Geel</h2>
+                    <p>Geela waa xayawaan dhaqameed oo muhiim u ah nolosha reer guuraaga ee Soomaaliya.</p>
+                    <div class="animal-image-container">
+                        <img src="Gell somali.jpg" class="animal-image" alt="Geel" id="geel-image">
+                        <button class="btn" onclick="toggleImage('geel-image', 'geel-btn')">Show/Hide Image</button>
+                    </div>
+                </div>
+
+                <!-- Leopard -->
+                <div class="region">
+                    <h2>Leopard</h2>
+                    <p>Leopard waa xayawaan aad u qurux badan, laakin way adag tahay in la helo xitaa Soomaaliya.
+                    </p>
+                    <div class="animal-image-container">
+                        <img src="Tiger.jpeg" class="animal-image" alt="Leopard" id="leopard-image">
+                        <button class="btn" onclick="toggleImage('leopard-image', 'leopard-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Fardaha -->
+                <div class="region">
+                    <h2>Fardaha</h2>
+                    <p>Fardaha waa xayawaan ka mid ah xoolaha dalka ku badan oo door muhiim ah ka ciyaara dhaqanka
+                        iyo nolosha bulshada.</p>
+                    <div class="animal-image-container">
+                        <img src="HHHHH.jpg" class="animal-image" alt="Fardaha" id="fardaha-image">
+                        <button class="btn" onclick="toggleImage('fardaha-image', 'fardaha-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Shimbir -->
+                <div class="region">
+                    <h2>Shimbir</h2>
+                    <p>Shimbiraha waa xayawaan duulaya oo laga helo deegaanka Soomaaliya.</p>
+                    <div class="animal-image-container">
+                        <img src="shimbir.webp" class="animal-image" alt="Shimbir" id="shimbir-image">
+                        <button class="btn" onclick="toggleImage('shimbir-image', 'shimbir-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Lo -->
+                <div class="region">
+                    <h2>Lo</h2>
+                    <p>Lo'oyinku waa xoolo muhiim ah oo si weyn looga isticmaalo Soomaaliya, gaar ahaan beeralayda.
+                    </p>
+                    <div class="animal-image-container">
+                        <img src="Lo.webp" class="animal-image" alt="Lo" id="lo-image">
+                        <button class="btn" onclick="toggleImage('lo-image', 'lo-btn')">Show/Hide Image</button>
+                    </div>
+                </div>
+
+                <!-- Geel Deer -->
+                <div class="region">
+                    <h2>Geel Deer</h2>
+                    <p>Geel Deer waa nooc ka mid ah geelaha, laakin aad u yar oo ka caan badan kuwa kale ee
+                        deegaanka Soomaaliya.</p>
+                    <div class="animal-image-container">
+                        <img src="deer.webp" class="animal-image" alt="Geel Deer" id="geel-deer-image">
+                        <button class="btn" onclick="toggleImage('geel-deer-image', 'geel-deer-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Camel -->
+                <div class="region">
+                    <h2>Fardaha Camel</h2>
+                    <p>Fardaha Camel waa xoolo dhaqameed oo ku badan gudaha Soomaaliya, waxaana laga isticmaalaa in
+                        badan.</p>
+                    <div class="animal-image-container">
+                        <img src="Gell somali.jpg" class="animal-image" alt="Fardaha Camel" id="camel-image">
+                        <button class="btn" onclick="toggleImage('camel-image', 'camel-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Lion -->
+                <div class="region">
+                    <h2>Shabeel (Lion)</h2>
+                    <p>Shabeelka waa xayawaan xoog leh oo aad u caan ah, inkastoo aan badanaa laga helin Soomaaliya.
+                    </p>
+                    <div class="animal-image-container">
+                        <img src="Lion.jpg" class="animal-image" alt="Shabeel (Lion)" id="lion-image">
+                        <button class="btn" onclick="toggleImage('lion-image', 'lion-btn')">Show/Hide Image</button>
+                    </div>
+                </div>
+
+                <!-- Elephant -->
+                <div class="region">
+                    <h2>Maroodi (Elephant)</h2>
+                    <p>Maroodiyadu waa xayawaan weyn oo leh geeso dhaadheer, waxaana laga helo gudaha Soomaaliya
+                        meelaha qaar.</p>
+                    <div class="animal-image-container">
+                        <img src="Marodi.jpg" class="animal-image" alt="Maroodi (Elephant)" id="elephant-image">
+                        <button class="btn" onclick="toggleImage('elephant-image', 'elephant-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Shabeel -->
+                <div class="region">
+                    <h2>Shabeel (Leopard)</h2>
+                    <p>Shabeelku waa xayawaan ugaadaya oo si sahlan looga heli karo dhulka iyo duurjoogta
+                        Soomaaliya.</p>
+                    <div class="animal-image-container">
+                        <img src="Lap.jpeg" class="animal-image" alt="Shabeel (Leopard)" id="shabeel-image">
+                        <button class="btn" onclick="toggleImage('shabeel-image', 'shabeel-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Ostrich -->
+                <div class="region">
+                    <h2>Shimbir Ostrich</h2>
+                    <p>Shimbirta Ostrich waa xayawaan weyn oo aan duulayn, laakiin orodkiisa waa mid aad u degdeg
+                        badan.</p>
+                    <div class="animal-image-container">
+                        <img src="ostrch.jpg" class="animal-image" alt="Shimbir Ostrich" id="ostrich-image">
+                        <button class="btn" onclick="toggleImage('ostrich-image', 'ostrich-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Dabagale (Wolf) -->
+                <div class="region">
+                    <h2>Dabagale (Wolf)</h2>
+                    <p>Dabagale waa xayawaan ugaadaya ah, waxaana laga helaa qaybo ka mid ah Soomaaliya.</p>
+                    <div class="animal-image-container">
+                        <img src="Yey.jpg" class="animal-image" alt="Dabagale (Wolf)" id="wolf-image">
+                        <button class="btn" onclick="toggleImage('wolf-image', 'wolf-btn')">Show/Hide Image</button>
+                    </div>
+                </div>
+
+                <!-- Sheep -->
+                <div class="region">
+                    <h2>Ido (Sheep)</h2>
+                    <p>Ido waa xoolo dhaqameed oo ku badan gudaha Soomaaliya, waxaana laga isticmaalaa hilibka iyo
+                        caanaha.</p>
+                    <div class="animal-image-container">
+                        <img src="Sliders/ido.jpg" class="animal-image" alt="Ido (Sheep)" id="sheep-image">
+                        <button class="btn" onclick="toggleImage('sheep-image', 'sheep-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Fish -->
+                <div class="region">
+                    <h2>Kalluun (Fish)</h2>
+                    <p>Kalluunku waa xayawaan biyo-dheer ah oo muhiim u ah dhaqanka iyo cunnada Soomaaliya.</p>
+                    <div class="animal-image-container">
+                        <img src="Sliders/fish.jpeg" class="animal-image" alt="Kalluun (Fish)" id="fish-image">
+                        <button class="btn" onclick="toggleImage('fish-image', 'fish-btn')">Show/Hide Image</button>
+                    </div>
+                </div>
+
+                <!-- Snake -->
+                <div class="region">
+                    <h2>Masaska (Snake)</h2>
+                    <p>Masaska waa xayawaan khatar ah oo laga helo dhulka Soomaalida, kuwaasoo qaarkood ay yihiin
+                        kuwo sun leh.</p>
+                    <div class="animal-image-container">
+                        <img src="Sliders/Snik.jpg" class="animal-image" alt="Masaska (Snake)" id="snake-image">
+                        <button class="btn" onclick="toggleImage('snake-image', 'snake-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Monkey -->
+                <div class="region">
+                    <h2>Shimbir Gorib (Monkey)</h2>
+                    <p>Shimbir Gorib waa xayawaan duulaya oo laga helo kaymaha iyo duurjoogta Soomaaliya.</p>
+                    <div class="animal-image-container">
+                        <img src="monkey.jpg" class="animal-image" alt="Shimbir Gorib (Monkey)" id="monkey-image">
+                        <button class="btn" onclick="toggleImage('monkey-image', 'monkey-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Zebra -->
+                <div class="region">
+                    <h2>Zebra</h2>
+                    <p>Zebraduhu waa xayawaan loogu tala galay duurjoogta, waxaana laga helo qaybo ka mid ah
+                        Soomaaliya.</p>
+                    <div class="animal-image-container">
+                        <img src="zebra.jpg" class="animal-image" alt="Zebra" id="zebra-image">
+                        <button class="btn" onclick="toggleImage('zebra-image', 'zebra-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Tiger -->
+                <div class="region">
+                    <h2>Shabeel (Tiger)</h2>
+                    <p>Shabeelka Tiger waa xayawaan weyn oo awood badan, inkastoo aan laga helin Soomaaliya.</p>
+                    <div class="animal-image-container">
+                        <img src="Tiger.jpeg" class="animal-image" alt="Shabeel (Tiger)" id="tiger-image"
+                            style="display:none;">
+                        <button class="btn" id="tiger-btn" onclick="toggleImage('tiger-image', 'tiger-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <!-- Sheep -->
+                <div class="region">
+                    <h2>Ido (Sheep)</h2>
+                    <p>Ido waa xayawaan lagu arko guud ahaan Soomaaliya.</p>
+                    <div class="animal-image-container">
+                        <img src="sgep.jpg" class="animal-image" alt="Sheep (sheep)" id="sheep-image"
+                            style="display:none;">
+                        <button class="btn" id="sheep-btn" onclick="toggleImage('sheep-image', 'sheep-btn')">Show/Hide
+                            Image</button>
+                    </div>
+                </div>
+
+                <script>
+                    function toggleImage(imageId) {
+                        const image = document.getElementById(imageId);
+                        if (image.style.display === "none" || image.style.display === "") {
+                            image.style.display = "block";
+                        } else {
+                            image.style.display = "none";
+                        }
+                    }
+
+                </script>
+
+
+            </div>
+        </div>
+    </section></center>
+
+    <script>
+
+
+        function toggleImage(imageId, buttonId) {
+            var image = document.getElementById(imageId);
+            var button = document.getElementById(buttonId);
+
+            // Toggle the visibility of the image
+            if (image.style.display === "none") {
+                image.style.display = "block";
+                image.classList.add("show");
+                button.textContent = "Hide Image";
+            } else {
+                image.style.display = "none";
+                image.classList.remove("show");
+                button.textContent = "Show Image";
+            }
+        }
+
+        window.onload = function () {
+            const images = document.querySelectorAll('.animal-image');
+            images.forEach((image) => {
+                image.style.display = 'block';
+            });
+
+            // Update button text to "Hide Image" initially
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach((button) => {
+                button.textContent = 'Hide Image';
+            });
+        };
+
+        function toggleInfo(id) {
+            const info = document.getElementById(id);
+            info.style.display = info.style.display === 'none' ? 'block' : 'none';
+        }
+
+        const toggleThemeButton = document.getElementById('theme-icon');
+        const body = document.body;
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.classList.add(savedTheme);
+            toggleThemeButton.className = savedTheme === 'dark-mode' ? 'bx bx-sun toggle-theme' : 'bx bx-moon toggle-theme';
+        }
+
+        toggleThemeButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                toggleThemeButton.className = 'bx bx-sun toggle-theme';
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                toggleThemeButton.className = 'bx bx-moon toggle-theme';
+                localStorage.setItem('theme', '');
+            }
+        });
+
+        // Menu Toggle
+        // const menuIcon = document.getElementById('menu-icon');
+        // const navbar = document.querySelector('.navbar');
+        // const themeIcon = document.getElementById('theme-icon');
+
+        // menuIcon.addEventListener('click', () => {
+        //     navbar.classList.toggle('active');
+        //     menuIcon.classList.toggle('bx-menu'); 
+        //     menuIcon.classList.toggle('bx-x'); 
+        // });
+
+        // Light/Dark Mode Toggle
+        themeIcon.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeIcon.classList.toggle('bx-sun');
+            themeIcon.classList.toggle('bx-moon');
+        });
+
+    </script>
+
+    <!--- footer desing --->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 1990 Xogta Xeywanada | Somalia.</p>
+        </div>
+        <div class="footer-icons">
+            <!-- Social Media Icons -->
+            <a href="https://facebook.com" target="_blank" class="footer-icon"><i class="bx bxl-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" class="footer-icon"><i class="bx bxl-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="footer-icon"><i class="bx bxl-linkedin"></i></a>
+
+            <!-- Phone and Email Icons -->
+            <a href="tel:+252 610930093" class="footer-icon"><i class="bx bx-phone"></i> +252 61093 0093</a>
+            <a href="mailto:info@xogtaxeywanada.com" class="footer-icon"><i class="bx bx-envelope"></i>
+                info@xogtaxeywanada.com</a>
+
+            <!-- Scroll to top button -->
+            <a href="Macaw.html" class="footer-iconTop"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+
+    <!--- scroll reveal --->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- typed js -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!---Custom Js--->
+    <script src="M.js"></script>
+
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Include Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+</body>
+
+</html>

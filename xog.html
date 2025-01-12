@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xogta Xayawaanka Soomaaliya</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            color: #333;
+        }
+
+        h3 {
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+
+        .region-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .region {
+            background-color: #1e3c72;
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .region:hover {
+            background-color: #5a8fdb;
+        }
+
+        .btn {
+            background-color: #5a8fdb;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #3a6ba8;
+        }
+
+        .animal-image {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .animal-image:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Xogta Xayawaanka Soomaaliya</h1>
+    <h3>Liiska Xayawaanka Ku Nool Soomaaliya</h3>
+    <div class="region-container">
+        <!-- Bakayle -->
+        <div class="region">
+            <h2>Bakayle</h2>
+            <p>Bakaylaha waxaa laga helaa guud ahaan Soomaaliya, waxayna ka mid yihiin xayawaanka ugu caansan ee dalka.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/bakeyle.jpg" class="animal-image" alt="Bakayle" id="bakayle-image">
+                <button class="btn" onclick="toggleImage('bakayle-image', 'bakayle-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Waraabe -->
+        <div class="region">
+            <h2>Waraabe</h2>
+            <p>Waraabaha waa xayawaan cagaaran oo xoolaha ku ilaalinaya dhammaan Soomaaliya.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/Hyena wrabe.jpeg" class="animal-image" alt="Waraabe" id="waraabe-image">
+                <button class="btn" onclick="toggleImage('waraabe-image', 'waraabe-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Geel -->
+        <div class="region">
+            <h2>Geel</h2>
+            <p>Geela waa xayawaan dhaqameed oo muhiim u ah nolosha reer guuraaga ee Soomaaliya.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/Gell somali.jpg" class="animal-image" alt="Geel" id="geel-image">
+                <button class="btn" onclick="toggleImage('geel-image', 'geel-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Leopard -->
+        <div class="region">
+            <h2>Leopard</h2>
+            <p>Leopard waa xayawaan aad u qurux badan, laakin way adag tahay in la helo xitaa Soomaaliya.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/Tiger.jpeg" class="animal-image" alt="Leopard" id="leopard-image">
+                <button class="btn" onclick="toggleImage('leopard-image', 'leopard-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Fardaha -->
+        <div class="region">
+            <h2>Fardaha</h2>
+            <p>Fardaha waa xayawaan ka mid ah xoolaha dalka ku badan oo door muhiim ah ka ciyaara dhaqanka iyo nolosha bulshada.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Faras.jpg" class="animal-image" alt="Fardaha" id="fardaha-image">
+                <button class="btn" onclick="toggleImage('fardaha-image', 'fardaha-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Shimbir -->
+        <div class="region">
+            <h2>Shimbir</h2>
+            <p>Shimbiraha waa xayawaan duulaya oo laga helo deegaanka Soomaaliya.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/shimbir.webp" class="animal-image" alt="Shimbir" id="shimbir-image">
+                <button class="btn" onclick="toggleImage('shimbir-image', 'shimbir-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Lo -->
+        <div class="region">
+            <h2>Lo</h2>
+            <p>Lo'oyinku waa xoolo muhiim ah oo si weyn looga isticmaalo Soomaaliya, gaar ahaan beeralayda.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Lo.webp" class="animal-image" alt="Lo" id="lo-image">
+                <button class="btn" onclick="toggleImage('lo-image', 'lo-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Geel Deer -->
+        <div class="region">
+            <h2>Geel Deer</h2>
+            <p>Geel Deer waa nooc ka mid ah geelaha, laakin aad u yar oo ka caan badan kuwa kale ee deegaanka Soomaaliya.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/deer.webp" class="animal-image" alt="Geel Deer" id="geel-deer-image">
+                <button class="btn" onclick="toggleImage('geel-deer-image', 'geel-deer-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Camel -->
+        <div class="region">
+            <h2>Fardaha Camel</h2>
+            <p>Fardaha Camel waa xoolo dhaqameed oo ku badan gudaha Soomaaliya, waxaana laga isticmaalaa in badan.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/Gell somali.jpg" class="animal-image" alt="Fardaha Camel" id="camel-image">
+                <button class="btn" onclick="toggleImage('camel-image', 'camel-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Lion -->
+        <div class="region">
+            <h2>Shabeel (Lion)</h2>
+            <p>Shabeelka waa xayawaan xoog leh oo aad u caan ah, inkastoo aan badanaa laga helin Soomaaliya.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/Lion.jpg" class="animal-image" alt="Shabeel (Lion)" id="lion-image">
+                <button class="btn" onclick="toggleImage('lion-image', 'lion-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Elephant -->
+        <div class="region">
+            <h2>Maroodi (Elephant)</h2>
+            <p>Maroodiyadu waa xayawaan weyn oo leh geeso dhaadheer, waxaana laga helo gudaha Soomaaliya meelaha qaar.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/Marodi.jpg" class="animal-image" alt="Maroodi (Elephant)" id="elephant-image">
+                <button class="btn" onclick="toggleImage('elephant-image', 'elephant-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Shabeel -->
+        <div class="region">
+            <h2>Shabeel (Leopard)</h2>
+            <p>Shabeelku waa xayawaan ugaadaya oo si sahlan looga heli karo dhulka iyo duurjoogta Soomaaliya.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/lepard.jpg" class="animal-image" alt="Shabeel (Leopard)" id="shabeel-image">
+                <button class="btn" onclick="toggleImage('shabeel-image', 'shabeel-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Ostrich -->
+        <div class="region">
+            <h2>Shimbir Ostrich</h2>
+            <p>Shimbirta Ostrich waa xayawaan weyn oo aan duulayn, laakiin orodkiisa waa mid aad u degdeg badan.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/ostrch.jpg" class="animal-image" alt="Shimbir Ostrich" id="ostrich-image">
+                <button class="btn" onclick="toggleImage('ostrich-image', 'ostrich-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Dabagale (Wolf) -->
+        <div class="region">
+            <h2>Dabagale (Wolf)</h2>
+            <p>Dabagale waa xayawaan ugaadaya ah, waxaana laga helaa qaybo ka mid ah Soomaaliya.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/wolf.jpg" class="animal-image" alt="Dabagale (Wolf)" id="wolf-image">
+                <button class="btn" onclick="toggleImage('wolf-image', 'wolf-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Sheep -->
+        <div class="region">
+            <h2>Ido (Sheep)</h2>
+            <p>Ido waa xoolo dhaqameed oo ku badan gudaha Soomaaliya, waxaana laga isticmaalaa hilibka iyo caanaha.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/ido.jpg" class="animal-image" alt="Ido (Sheep)" id="sheep-image">
+                <button class="btn" onclick="toggleImage('sheep-image', 'sheep-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Fish -->
+        <div class="region">
+            <h2>Kalluun (Fish)</h2>
+            <p>Kalluunku waa xayawaan biyo-dheer ah oo muhiim u ah dhaqanka iyo cunnada Soomaaliya.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/fish.jpeg" class="animal-image" alt="Kalluun (Fish)" id="fish-image">
+                <button class="btn" onclick="toggleImage('fish-image', 'fish-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Snake -->
+        <div class="region">
+            <h2>Masaska (Snake)</h2>
+            <p>Masaska waa xayawaan khatar ah oo laga helo dhulka Soomaalida, kuwaasoo qaarkood ay yihiin kuwo sun leh.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/Snik.jpg" class="animal-image" alt="Masaska (Snake)" id="snake-image">
+                <button class="btn" onclick="toggleImage('snake-image', 'snake-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Monkey -->
+        <div class="region">
+            <h2>Shimbir Gorib (Monkey)</h2>
+            <p>Shimbir Gorib waa xayawaan duulaya oo laga helo kaymaha iyo duurjoogta Soomaaliya.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/monkey.jpg" class="animal-image" alt="Shimbir Gorib (Monkey)" id="monkey-image">
+                <button class="btn" onclick="toggleImage('monkey-image', 'monkey-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Zebra -->
+        <div class="region">
+            <h2>Zebra</h2>
+            <p>Zebraduhu waa xayawaan loogu tala galay duurjoogta, waxaana laga helo qaybo ka mid ah Soomaaliya.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/zebra.jpg" class="animal-image" alt="Zebra" id="zebra-image">
+                <button class="btn" onclick="toggleImage('zebra-image', 'zebra-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+        <!-- Tiger -->
+        <div class="region">
+            <h2>Shabeel (Tiger)</h2>
+            <p>Shabeelka Tiger waa xayawaan weyn oo awood badan, inkastoo aan laga helin Soomaaliya.</p>
+            <div class="animal-image-container">
+                <img src="../IMAGE/Sliders/Tiger.jpeg" class="animal-image" alt="Shabeel (Tiger)" id="tiger-image">
+                <button class="btn" onclick="toggleImage('tiger-image', 'tiger-btn')">Show/Hide Image</button>
+            </div>
+        </div>
+    
+    </div>
+    
+
+    <script>
+        // Function to toggle visibility of images
+        function toggleImage(imageId, buttonId) {
+            const image = document.getElementById(imageId); 
+            const button = document.getElementById(buttonId); 
+
+            if (image.style.display === 'none') {
+                image.style.display = 'block'; 
+                button.textContent = 'Hide Image'; 
+            } else {
+                image.style.display = 'none'; 
+                button.textContent = 'Show Image'; 
+            }
+        }
+
+        window.onload = function() {
+            const images = document.querySelectorAll('.animal-image');
+            images.forEach((image) => {
+                image.style.display = 'block'; 
+            });
+
+            // Update button text to "Hide Image" initially
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach((button) => {
+                button.textContent = 'Hide Image'; 
+            });
+        };
+    </script>
+</body>
+</html>

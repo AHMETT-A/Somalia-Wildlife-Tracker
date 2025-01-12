@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Somalia Wildlife Tracker</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- <link rel="stylesheet" href="../CSS/Style.css"> -->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Q6E91zE+nHsj+9n/B7KpxwO1z1MCZXTT+mMX5QoI6Wk46pbgWvzCBbTclvCDUGkC" crossorigin="anonymous">
+  <link rel="stylesheet" href="S.css">
+
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #1e3c72;
+      color: white;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Light/Dark Mode */
+    body.light-mode {
+      background: #ffffff;
+      color: #333333;
+    }
+
+    .light-mode .slide-text h1,
+    .light-mode .slide-text h2,
+    .light-mode .slide-text p {
+      color: #333333;
+    }
+
+    .light-mode .footer-text,
+    .light-mode .footer-icons a {
+      color: #333333;
+    }
+
+    /* Slider Container */
+    .slider {
+      position: relative;
+      max-width: 100%;
+      height: 90vh;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Slide Styling */
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Hidden state for text toggle */
+    .hidden {
+      display: none;
+    }
+
+    /* Highlight effect on hover */
+    .highlighted {
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    /* Multicolored hover text */
+    .slide-text h1:hover,
+    .slide-text h2:hover,
+    .slide-text p:hover {
+      transition: color 0.3s ease-in-out;
+    }
+
+    /* Center Text */
+    .slide-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+      z-index: 2;
+      /* Ensure it stays on top of images */
+    }
+
+    .slide-text h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .slide-text h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .slide-text p {
+      font-size: 1.2rem;
+    }
+
+    /* Add additional space for multiple-text to show properly */
+    .slide-text .multiple-text {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      margin-top: 20px;
+      opacity: 1;
+      z-index: 3;
+      /* Ensure it appears after the header text */
+    }
+
+    /* Arrows */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 10;
+    }
+
+    .arrow.left {
+      left: 20px;
+    }
+
+    .arrow.right {
+      right: 20px;
+    }
+
+    /* Dots */
+    .dots-container {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+
+    .dot {
+      width: 15px;
+      height: 15px;
+      background-color: white;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dot.active {
+      background-color: #1e3c72;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .arrow {
+        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+      }
+
+      .slide-text h1 {
+        font-size: 2rem;
+      }
+
+      .slide-text p {
+        font-size: 1rem;
+      }
+
+      .slide-text .multiple-text {
+        font-size: 1.5rem;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+  <!--- Header and Nav --->
+  <header class="header">
+    <a href="Index.html" class="logo">
+        <i class="bx bxs-basket"></i>&nbsp;Somalia Wildlife Tracker
+    </a>
+
+    <i class="bx bx-menu" id="menu-icon"></i>
+
+    <nav class="navbar">
+        <a href="Index.html" class="active">Home</a>
+        <a href="Macaw.html">Macaw</a>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">
+                Products <i class="bx bx-chevron-down"></i>
+            </a>
+            <ul class="submenu">
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="./Macow/Xogta.html">Xogta Xola</a></li>
+                <li><a href="./All Index/Chapters.html">Chapters</a></li>
+                <li><a href="./All Index/Lab.html">Lap</a></li>
+                <li><a href="./All Index/Assingment.html">Assignment</a></li>
+                <li><a href="./All Index/Help.html">Help Page</a></li>
+            </ul>
+        </div>
+        <a href="Animals.html">Animals</a>
+        <a href="Content.html">Contact</a>
+        <a href="Prodect.html">Prodect</a>
+        <a href="Map.html">Map</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="bx bx-moon toggle-theme" id="theme-icon"></i>
+    </nav>
+</header>
+  <br><br><br><br>
+
+  <!-- Sliders -->
+  <div class="slider">
+    <!-- Slide 1 -->
+    <div class="slide">
+      <img src="slider1.jpg" alt="Slide 1">
+      <div class="slide-text" onclick="this.classList.toggle('hidden')">
+        <h1>Explore the World</h1>
+        <h2>Adventure Awaits</h2>
+        <div class="multiple-text"></div>
+        <p>Unleash your wanderlust with breathtaking experiences.</p>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+      <img src="the g.jpeg" alt="Slide 2">
+      <div class="slide-text" onclick="this.classList.toggle('hidden')">
+        <h1>Explore the World</h1>
+        <h2>Adventure Awaits</h2>
+        <div class="multiple-text"></div>
+        <p>Unleash your wanderlust with breathtaking experiences.</p>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+      <img src="Marod.jpg" alt="Slide 3">
+      <div class="slide-text" onclick="this.classList.toggle('hidden')">
+        <h1>Explore the World</h1>
+        <h2>Adventure Awaits</h2>
+        <div class="multiple-text"></div>
+        <p>Unleash your wanderlust with breathtaking experiences.</p>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+      <img src="ido.jpg" alt="Slide 4">
+      <div class="slide-text" onclick="this.classList.toggle('hidden')">
+        <h1>Explore the World</h1>
+        <h2>Adventure Awaits</h2>
+        <div class="multiple-text"></div>
+        <p>Unleash your wanderlust with breathtaking experiences.</p>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide">
+      <img src="Gell somali.jpg" alt="Slide 5">
+      <div class="slide-text" onclick="this.classList.toggle('hidden')">
+        <h1>Explore the World</h1>
+        <h2>Adventure Awaits</h2>
+        <div class="multiple-text"></div>
+        <p>Unleash your wanderlust with breathtaking experiences.</p>
+      </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide">
+      <img src="cow somli.jpg" alt="Slide 6">
+      <div class="slide-text" onclick="this.classList.toggle('hidden')">
+        <h1>Explore the World</h1>
+        <h2>Adventure Awaits</h2>
+        <div class="multiple-text"></div>
+        <p>Unleash your wanderlust with breathtaking experiences.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Navigation Arrows -->
+  <button class="arrow left" onclick="changeSlide(-1)">&#8592;</button>
+  <button class="arrow right" onclick="changeSlide(1)">&#8594;</button>
+
+  <!-- Dots -->
+  <div class="dots-container">
+    <div class="dot active" onclick="goToSlide(0)"></div>
+    <div class="dot" onclick="goToSlide(1)"></div>
+    <div class="dot" onclick="goToSlide(2)"></div>
+    <div class="dot" onclick="goToSlide(3)"></div>
+    <div class="dot" onclick="goToSlide(4)"></div>
+    <div class="dot" onclick="goToSlide(5)"></div>
+  </div>
+  </div><br><br><br>
+
+
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>Copyright &copy; 1990 Xogta Xeywanada | Somalia.</p>
+    </div>
+    <div class="footer-icons">
+      <a href="https://facebook.com" target="_blank" class="footer-icon"><i class="bx bxl-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank" class="footer-icon"><i class="bx bxl-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank" class="footer-icon"><i class="bx bxl-linkedin"></i></a>
+      <a href="tel:+252 610930093" class="footer-icon"><i class="bx bx-phone"></i> +252 61093 0093</a>
+      <a href="mailto:info@xogtaxeywanada.com" class="footer-icon"><i class="bx bx-envelope"></i>
+        info@xogtaxeywanada.com</a>
+      <a href="Index.html" class="footer-iconTop"><i class='bx bx-up-arrow-alt'></i></a>
+    </div>
+  </footer>
+  <script>
+    // Image Slider JS
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = slides.length;
+
+    function changeSlide(direction) {
+      slides[currentSlide].classList.remove('active');
+      if (dots.length) dots[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      slides[currentSlide].classList.add('active');
+      if (dots.length) dots[currentSlide].classList.add('active');
+    }
+
+    function goToSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      if (dots.length) dots[currentSlide].classList.remove('active');
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+      if (dots.length) dots[currentSlide].classList.add('active');
+    }
+
+    setInterval(() => changeSlide(1), 5000);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Menu Toggle
+      // const menuIcon = document.getElementById('menu-icon');
+      // const navbar = document.querySelector('.navbar');
+
+      // menuIcon.addEventListener('click', () => {
+      //   navbar.classList.toggle('active'); 
+      //   menuIcon.classList.toggle('bx-x'); 
+      //   menuIcon.classList.toggle('bx-menu'); 
+      // });
+
+
+      // Light/Dark Mode Toggle
+      const themeIcon = document.getElementById('theme-icon');
+      const body = document.body;
+
+      themeIcon.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        themeIcon.classList.toggle('bx-sun');
+        themeIcon.classList.toggle('bx-moon');
+      });
+
+      // Typed.js Initialization
+      const typed = new Typed('.multiple-text', {
+        strings: ['Marodi', 'Geel', 'Lo', 'Ari', 'Haramacad', 'Ido'],
+        typeSpeed: 100,
+        backSpeed: 100,
+        backDelay: 1000,
+        loop: true,
+      });
+
+      // Auto-hide menu on click outside (optional)
+      document.addEventListener('click', (e) => {
+        if (!navbar.contains(e.target) && !menuIcon.contains(e.target)) {
+          navbar.classList.remove('active');
+          menuIcon.classList.remove('bx-x');
+          menuIcon.classList.add('bx-menu');
+        }
+      });
+    });
+
+
+
+
+    // Hover effect for images
+    slides.forEach((slide) => {
+      slide.addEventListener('mouseover', () => {
+        const text = slide.querySelector('.slide-text');
+        if (text) text.classList.add('highlighted');
+      });
+      slide.addEventListener('mouseout', () => {
+        const text = slide.querySelector('.slide-text');
+        if (text) text.classList.remove('highlighted');
+      });
+    });
+
+    // Mouseover and mouseout effects for text
+    const textElements = document.querySelectorAll('.slide-text h1, .slide-text h2, .slide-text p');
+    textElements.forEach(textElement => {
+      textElement.addEventListener('mouseover', () => {
+        textElement.style.color = getRandomColor();
+      });
+      textElement.addEventListener('mouseout', () => {
+        textElement.style.color = '';
+      });
+    });
+
+    // Generate random color
+    function getRandomColor() {
+      return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
+    }
+  </script>
+
+
+
+  <!---Custom Js--->
+  <script src="M.js"></script>
+
+  <!-- Bootstrap JS (including Popper.js for dropdowns, tooltips, etc.) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-RWzZo5sBoHehtUAS3Gbq94eAfkMuwUEglqT2DsAJrfTbjTFAjMJ3RkeGiK14/kzB"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- scroll reveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- Include Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+</body>
+
+</html>

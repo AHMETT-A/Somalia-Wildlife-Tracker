@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somalia Wildlife Tracker</title>
+    <link rel="icon" href="../IMAGE/L2.webp">
+    <!-- Include Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!--- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!---custom css -->
+    <!-- Link Style -->
+    <link rel="stylesheet" href="S.css">
+</head>
+
+<body>
+
+
+    <!-- Header And Nav -->
+    <header class="header">
+        <a href="./Index.html" class="logo">
+            <i class="bx bxs-basket"></i>&nbsp;Somalia Wildlife Tracker
+        </a>
+
+        <i class="bx bx-menu" id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="Index.html" class="active">Home</a>
+            <a href="Macaw.html">Macaw</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">
+                    Products <i class="bx bx-chevron-down"></i>
+                </a>
+                <ul class="submenu">
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="./Macow/Xogta.html">Xogta Xola</a></li>
+                    <li><a href="./All Index/Chapters.html">Chapters</a></li>
+                    <li><a href="./All Index/Lab.html">Lap</a></li>
+                    <li><a href="./All Index/Assingment.html">Assignment</a></li>
+                    <li><a href="./All Index/Help.html">Help Page</a></li>
+                </ul>
+            </div>
+            <a href="Animals.html">Animals</a>
+            <a href="Content.html">Contact</a>
+            <a href="Prodect.html">Prodect</a>
+            <a href="Map.html">Map</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="bx bx-moon toggle-theme" id="theme-icon"></i>
+        </nav>
+    </header>
+
+
+    <section class="about" id="about">
+        <div class="about-container">
+            <!-- Images Section -->
+            <div class="about-img">
+                <div class="card">
+                    <img src="Image-removebg-preview.png" alt="Image 1">
+                    <img src="Crahman.jpg" alt="Image 2">
+                </div>
+            </div>
+            <!-- Content Section -->
+            <div class="about-content">
+                <h2 class="heading">Design<span>ers</span></h2>
+                <p>Ahmed C/kadir Yusuf. ID 00777</p>
+                <p>Abdirahman Ahmed Farah. ID 00756</p>
+                <a href="#" class="btn">HEY</a>
+            </div>
+        </div>
+    </section>
+        <!--- footer desing --->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 1990 Xogta Xeywanada | Somalia.</p>
+        </div>
+        <div class="footer-icons">
+            <!-- Social Media Icons -->
+            <a href="https://facebook.com" target="_blank" class="footer-icon"><i class="bx bxl-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" class="footer-icon"><i class="bx bxl-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="footer-icon"><i class="bx bxl-linkedin"></i></a>
+
+            <!-- Phone and Email Icons -->
+            <a href="tel:+252 610930093" class="footer-icon"><i class="bx bx-phone"></i> +252 61093 0093</a>
+            <a href="mailto:info@xogtaxeywanada.com" class="footer-icon"><i class="bx bx-envelope"></i>
+                info@xogtaxeywanada.com</a>
+
+            <!-- Scroll to top button -->
+            <a href="About.html" class="footer-iconTop"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+
+    <!--- scroll reveal --->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- typed js -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!---Custom Js--->
+    <script src="M.js"></script>
+
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Include Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+
+        function toggleInfo(id) {
+            const info = document.getElementById(id);
+            info.style.display = info.style.display === 'none' ? 'block' : 'none';
+        }
+
+        const toggleThemeButton = document.getElementById('theme-icon');
+        const body = document.body;
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.classList.add(savedTheme);
+            toggleThemeButton.className = savedTheme === 'dark-mode' ? 'bx bx-sun toggle-theme' : 'bx bx-moon toggle-theme';
+        }
+
+        toggleThemeButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                toggleThemeButton.className = 'bx bx-sun toggle-theme';
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                toggleThemeButton.className = 'bx bx-moon toggle-theme';
+                localStorage.setItem('theme', '');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
